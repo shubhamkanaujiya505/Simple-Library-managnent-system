@@ -5,13 +5,13 @@ using namespace std;
 
 class Library
 {
-    public:
-        int id;
-        char name[100];
-        char author[100];
-        char student[100];
-        int price;
-        int pages;
+public:
+    int id;
+    char name[100];
+    char author[100];
+    char student[100];
+    int price;
+    int pages;
 };
 
 int main()
@@ -19,7 +19,6 @@ int main()
     Library lib[20];
     int input = 0;
     int count = 0;
-    
 
     while (input != 3)
     {
@@ -35,11 +34,13 @@ int main()
             cout << "enter book id" << endl;
             cin >> lib[count].id;
             cout << "enter book name" << endl;
-            cin >> lib[count].name;
+            // cin >> lib[count].name;
+            cin.getline(lib[count].name, 100, ',');
             cout << "enter author name" << endl;
-            cin >> lib[count].author;
+            // cin >> lib[count].author;
+            cin.getline(lib[count].author, 100, ',');
             cout << "enter student name" << endl;
-            cin >> lib[count].student;
+            cin.getline(lib[count].student, 100, ',');
             cout << "enter price name" << endl;
             cin >> lib[count].price;
             cout << "enter pages name" << endl;
@@ -50,10 +51,15 @@ int main()
             for (int i = 0; i < count; i++)
             {
                 cout << "book id : " << lib[i].id << endl;
+                
                 cout << "book name : " << lib[i].name << endl;
+
                 cout << "book author : " << lib[i].author << endl;
+
                 cout << "book student : " << lib[i].student << endl;
+
                 cout << "book price : " << lib[i].price << endl;
+
                 cout << "book pages : " << lib[i].pages << endl;
             }
             break;
@@ -62,7 +68,7 @@ int main()
             exit(0);
             break;
         default:
-            cout<<"you have entered wrong value type again "<<endl;
+            cout << "you have entered wrong value type again " << endl;
             goto start;
             break;
         }
